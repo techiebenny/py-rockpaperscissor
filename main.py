@@ -51,11 +51,3 @@ Options = {
 result = (Options[user_choice][computer_choice])
 
 print (result)
-
-
-"""
-if(user_choice == "Rock")
-    if(computer_choice == "Rock")
-        result = "Draw"
-"""
-        

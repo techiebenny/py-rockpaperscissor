@@ -12,17 +12,31 @@ player_name = input("Enter your name: ")
 print("Hello " + player_name + "!")
 
 print("Welcome to Rock Paper Scissor!")
-# print("Choose \n 1: Rock \n 2: Paper \n 3: Scissor \n\n")
 
-inputchoice = int(input("Choose \n 1: Rock \n 2: Paper \n 3: Scissor \n\n"))
+# Get User Input
+def convertUserInput():
+    inputchoice = 0
+    inputchoice = int(input("Choose \n 1: Rock \n 2: Paper \n 3: Scissor \n\n"))
+    
+ #   if inputchoice.isalpha():
+  #      print("wrong input ")
 
+    #Default Case
+    if(inputchoice > 3 or inputchoice < 0 ):
+        print("Wrong Choice Entered, Please try again.")
+        convertUserInput()
+
+
+    return inputchoice
+
+#Conversion Table
 option = {
     1: "Rock",
     2: "Paper",
-    3: "Scissor"
+    3: "Scissor"    
 }
 
-user_choice = option[inputchoice]
+user_choice = option[convertUserInput()]
 computer_choice = random.choice(list(option.values()))
 
 print("You have chosen " + user_choice)

@@ -1,6 +1,7 @@
 import random
 
-# created by benny
+# created by benny 
+# V1.1
 
 """ git: techiebenny """
 
@@ -19,9 +20,15 @@ print("Welcome to Rock Paper Scissor!")
 inputchoice = 0
 
 while True:
-    inputchoice = int(input("Choose \n 1: Rock \n 2: Paper \n 3: Scissor \n\n"))
-        
-    if(inputchoice > 3 or inputchoice < 0 ):
+    inputchoice = input("Choose \n 1: Rock \n 2: Paper \n 3: Scissor \n\n")
+    
+    while not inputchoice.isdigit():
+        inputchoice = input("Please input a number from 1-3!! : ")
+        continue
+
+    inputchoice = int(inputchoice)
+    
+    if(inputchoice > 3 or inputchoice < 0):
         print("Wrong Choice Entered, Please try again.")
         continue
 

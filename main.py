@@ -2,34 +2,10 @@ import random
 from time import sleep
 
 # created by benny 
-# V1.2
+# V1.3
 
 """ git: techiebenny """
 
-#Conversion Table
-option = {
-    1: "Rock",
-    2: "Paper",
-    3: "Scissor"    
-}
-#logic part 
-Options = {
-    "Rock" : {
-        "Rock": "Draw",
-        "Paper": "Lose",
-        "Scissor": "Win" 
-    },
-    "Paper" : {
-        "Paper": "Draw",
-        "Rock": "Win",
-        "Scissor": "Lose" 
-    },
-    "Scissor" : {
-        "Scissor": "Draw",
-        "Rock": "Lose",
-        "Paper": "Win"
-    }
-}
 
 
 print("welcome to rock paper scissors!")
@@ -50,9 +26,31 @@ print("Hello " + player_name + "!")
 print("Welcome to Rock Paper Scissor!")
 
 
-
-
 inputchoice = 0
+#Conversion Table
+option = {
+    1: "Rock",
+    2: "Paper",
+    3: "Scissor"    
+}
+#logic part 
+Choices = {
+    "Rock" : {
+        "Rock": "Draw",
+        "Paper": "Lose",
+        "Scissor": "Win" 
+    },
+    "Paper" : {
+        "Paper": "Draw",
+        "Rock": "Win",
+        "Scissor": "Lose" 
+    },
+    "Scissor" : {
+        "Scissor": "Draw",
+        "Rock": "Lose",
+        "Paper": "Win"
+    }
+}
 
 while True:
     inputchoice = input("Choose \n 1: Rock \n 2: Paper \n 3: Scissor \n\n")
@@ -76,7 +74,15 @@ while True:
     print("Computer has chosen " + computer_choice)
 
 
-    result = (Options[user_choice][computer_choice])
+    result = (Choices[user_choice][computer_choice])
 
-    sleep(.500)
     print (result + "\n")
+    sleep(.500)
+
+    replay = input("\nPress Y to play again. \t :")
+    if(replay.lower() == "y" ):
+        continue
+    else:
+        print("\n\nThanks for playing!")
+        sleep(1.500)
+        break

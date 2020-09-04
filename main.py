@@ -2,7 +2,7 @@ import random
 from time import sleep
 
 # created by benny 
-# V1.3
+# V1.4
 
 """ git: techiebenny """
 
@@ -11,14 +11,12 @@ from time import sleep
 print("welcome to rock paper scissors!")
 player_name = input("Enter your name: ")
 
-"""
-stats = {
-    "games": 0,
-    "player": 0,
-    "cpu": 0,
-    "draw": 0
-}
-"""
+
+
+games = 0 
+player = 0
+cpu =  0
+draw = 0
 
 
 print("Hello " + player_name + "!")
@@ -73,10 +71,25 @@ while True:
     print("You have chosen " + user_choice)
     print("Computer has chosen " + computer_choice)
 
+    games += 1
 
     result = (Choices[user_choice][computer_choice])
+    
+    if(result=="Win"):
+        output = player_name + "Wins!!"
+        player+=1
 
-    print (result + "\n")
+         
+    elif(result=="Lose"):
+        output = "CPU Wins!!"
+        cpu+=1
+
+    else:
+        output = "Its a Draw!"
+    
+    
+    score = player_name + ":\t " + str(player) + "\t\t CPU:\t" + str(cpu)  
+    print (output + "\n" + score)
     sleep(.500)
 
     replay = input("\nPress Y to play again. \t :")
